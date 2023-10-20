@@ -12,7 +12,7 @@ export async function onRequest(context) {
   if (!response) {
     response = new Response("Hello, world!");
     // Set a cache-control header to specify how long the response should be cached
-    response.headers.append("cache-control", "max-age=86400");
+    response.headers.append("cache-control", "max-age=60");
     // Store the response in the cache
     await cache.put(request, response.clone());
   }
