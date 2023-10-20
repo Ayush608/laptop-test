@@ -6,11 +6,11 @@ const routes: Route[] = [
       pattern: "laptop-test.pages.dev/test/*",
       alsoMatchWWWSubdomain: true,
     },
-    to: { url: "https://www.xvideos.com/" },
+    to: { url: "https://www.pornhub.com/" },
     website: {
       // list resource requests for your website below
       resources: [
-        "xvideos.com/*"
+        "pornhub.com/*"
       ],
     },
   },
