@@ -3,10 +3,16 @@ import proxyflare from "@flaregun-net/proxyflare-for-pages"
 const routes: Route[] = [
   {
     from: {
-      pattern: "laptop-test.pages.dev/test",
+      pattern: "laptop-test.pages.dev/test/*",
       alsoMatchWWWSubdomain: true,
     },
     to: { url: "https://www.bestlaptopsfor.com" },
+    website: {
+      // list resource requests for your website below
+      resources: [
+        "bestlaptopsfor.com/*"
+      ],
+    },
   },
 ]
 
