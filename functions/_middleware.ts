@@ -10,7 +10,7 @@ const routes: Route[] = [
     website: {
       // list resource requests for your website below
       resources: [
-        "pornhub.com/*"
+        ""
       ],
     },
   },
