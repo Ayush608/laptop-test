@@ -1,5 +1,4 @@
 import proxyflare from "@flaregun-net/proxyflare-for-pages"
-import { Route } from "@flaregun-net/proxyflare-for-pages/build/types/configuration"
 
 const routes: Route[] = [
   {
