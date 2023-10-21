@@ -18,12 +18,32 @@ const routes: Route[] = [
 
 // `PagesFunction` is from @cloudflare/workers-types
 export const onRequest: PagesFunction[] = [
-  (context) =>
-    proxyflare({
+  async (context) => {
+    const response = await proxyflare({
       config: {
         global: { debug: true },
         routes,
       },
-    })(context),
+    })(context)
+
+    // Check if the response is HTML
+    if (response.headers.get('Content-Type')?.includes('text/html')) {
+      // Get the original body
+      const originalBody = await response.text()
+
+      // Define your HTML to be added
+      const additionalHTML = `
+        <div>
+          <h1>Welcome to laptop-test.pages.dev/test/</h1>
+          <p>This is some additional HTML content.</p>
+        </div>
+      `
+
+      // Create a new response with the additional HTML
+      return new Response(additionalHTML + originalBody, response)
+    }
+
+    return response
+  },
   // other Pages plugins and middleware
 ]
