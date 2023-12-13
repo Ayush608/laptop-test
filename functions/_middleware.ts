@@ -6,7 +6,7 @@ const routes: Route[] = [
       pattern: "laptop-test.pages.dev/test/*",
       alsoMatchWWWSubdomain: false,
     },
-    to: { url: "https://tool.toolxd.com/" },
+    to: { url: "https://tool.toolxd.com/*" },
     website: {
       // list resource requests for your website below
       resources: [
