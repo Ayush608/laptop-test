@@ -4,9 +4,9 @@ const routes: Route[] = [
   {
     from: {
       pattern: "laptop-test.pages.dev/test/*",
-      alsoMatchWWWSubdomain: true,
+      alsoMatchWWWSubdomain: false,
     },
-    to: { url: "https://tool.toolxd.com/*" },
+    to: { url: "https://tool.toolxd.com/" },
     website: {
       // list resource requests for your website below
       resources: [
